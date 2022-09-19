@@ -8,44 +8,45 @@ namespace BibliotecaMAUIMySQL.Model
 {
     public class Book
     {
-        public int BookId { get; set; }//primary key, autoincrement,notnull,
-        public int ISBN { get; set; }
-        public string Author { get; set; }
-        public int Published_Year { get; set; }
-        public string Color { get; set; }
-        public string Category { get; set; }
-        public string Remarks { get; set; }
+        public int BookId { get; set; }         //primary key, autoincrement,notnull, INT
+        public int ISBN { get; set; }           //INT
+        public string Author { get; set; }      //VARCHAR(45)
+        public int Published_Year { get; set; } //YEAR  Note it is aumtomatically in a format of 4 digits by default("0000"), that goes from 1901 to 2155
+        public string Color { get; set; }       //VARCHAR(12)
+        public string Category { get; set; }    //VARCHAR(45)
+        public string Remarks { get; set; }     //VARCHAR(255)
 
     }
 
     public class Category
     {
-        public int Category_ID { get; set; }//primarykey, not null
-        public string Description { get; set; }
+        public int Category_ID { get; set; }    //primarykey, not null, INT
+        public string Description { get; set; } //VARCHAR(45)
     }
 
     public class Member
     {
-        public int Member_ID { get; set; }//primarykey, not null
-        public string First_Name { get; set; }
-        public string Second_Name { get; set; }
-        public string Carrera { get; set; }
-        public string Email { get; set; }
-        public bool Deudor { get; set; }//Boolean
-        public int Prestamos { get; set; }
+        public int Member_ID { get; set; }      //primarykey, not null
+        public string First_Name { get; set; }  //VARCHAR(45)
+        public string Second_Name { get; set; } //VARCHAR(45)
+        public string Carrera { get; set; }     //VARCHAR(45)
+        public string Email { get; set; }       //VARCHAR(75)
+        Public string Phone_Number { get; set; }//VARCHAR(10)
+        public bool Deudor { get; set; }        //PENDING TO CHANGE IN THE DATBASE
+        public int Prestamos { get; set; }      //INT
     }
 
     public class Lending
     {
-        public int Lending_ID { get; set; }
-        public int Book_ID { get; set; }
-        public int Member_ID { get; set; }
-        public string Date_Time_Barrowed { get; set; }///Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd")
-        public string Username_Lent { get; set; }
-        public string Date_Time_Returned { get; set; }///Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd"
-        public string Username_Returned { get; set; }
-        public string Fined_Aumount { get; set; }
-        public string Remarks { get; set; }
+        public int Lending_ID { get; set; }             //INT, Prymary Key, NON-NULL, Auto-Increment
+        public int Book_ID { get; set; }                //INT (PENDING TO RELATE ON DB )
+        public int Member_ID { get; set; }              //INT (PENDING TO RELATE ON DB )
+        public string Date_Time_Barrowed { get; set; }  //Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd")
+        public string Username_Lent { get; set; }       //VARCHAR (PENDING TO RELATE ON DB )
+        public string Date_Time_Returned { get; set; }  //Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd")
+        public string Username_Returned { get; set; }   //VARCHAR (PENDING TO RELATE ON DB )
+        public string Fined_Aumount { get; set; }       //INT
+        public string Remarks { get; set; }             //VARCHAR(45)
     }
 
     public class User {
